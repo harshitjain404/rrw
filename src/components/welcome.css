@@ -1,0 +1,75 @@
+/* src/components/Welcome.css */
+.welcome-section {
+  background-color: #ffb6c1;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-section h1 {
+  font-size: 2.2rem;
+  color: #fff;
+  font-family: 'Pacifico', cursive;
+  animation: pulse 2s infinite;
+}
+
+.welcome-section p {
+  font-size: 1rem;
+  color: white;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heart-bg::before, .heart-bg::after {
+  content: '💗';
+  font-size: 2rem;
+  position: absolute;
+  animation: float 6s infinite linear;
+  opacity: 0.5;
+}
+
+.heart-bg::before {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.heart-bg::after {
+  top: 30%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-200px) rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .welcome-section h1 {
+    font-size: 3rem;
+  }
+
+  .welcome-section p {
+    font-size: 1.2rem;
+  }
+}
