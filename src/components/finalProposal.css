@@ -1,0 +1,102 @@
+.proposal-container {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  background: radial-gradient(#ffeaea, #fff0f5);
+  min-height: 80vh;
+  font-family: 'Courier New', cursive;
+}
+
+.note-paper {
+  background: #fff9f0;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 0 20px #ffcdd2;
+  border: 2px dashed #e57373;
+  min-height: 150px;
+}
+
+.typed-line {
+  font-size: 1.4rem;
+  color: #d32f2f;
+  white-space: pre-line;
+  min-height: 4rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.buttons-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.yes-button, .maybe-button {
+  font-size: 1.1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.yes-button {
+  background-color: #f06292;
+  color: white;
+}
+
+.yes-button:hover {
+  background-color: #ec407a;
+}
+
+.maybe-button {
+  background-color: #ffccbc;
+  color: #5d4037;
+}
+
+.promise-card {
+  margin-top: 2rem;
+  background: #fff0f5;
+  border: 3px solid #ffb6c1;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 2rem auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.promise-card h2 {
+  color: #c2185b;
+  margin-bottom: 1rem;
+}
+
+.heart-explosion {
+  font-size: 2rem;
+  animation: pulse 1s ease infinite;
+}
+
+.teddy {
+  font-size: 3rem;
+  margin-top: 1rem;
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

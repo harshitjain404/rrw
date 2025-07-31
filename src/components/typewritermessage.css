@@ -1,0 +1,58 @@
+.typewriter-wrapper {
+  background-color: #fffaf0;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 192, 203, 0.3);
+  text-align: center;
+}
+
+.typewriter-text {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  border-right: 0.15em solid pink;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  color: #e91e63;
+  white-space: normal;
+  overflow: hidden;
+  animation: typing 4s steps(80, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Ensure the whole text is visible and animates */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: pink;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter-text {
+    font-size: 1rem;
+  }
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: pink; }
+}

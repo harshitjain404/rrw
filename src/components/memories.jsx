@@ -1,46 +1,32 @@
-// Memories.js
 import React from 'react';
 import './memories.css';
 
 const memories = [
   {
-    image: 'https://i.imgur.com/0y8Ftya.jpg',
-    message: "Our first coffee date ☕",
+    caption: 'More memories coming soon',
+    emoji: '📷',
   },
   {
-    image: 'https://i.imgur.com/VYH7j1G.jpg',
-    message: "That goofy selfie 🤪",
+    caption: 'To be clicked together 🥰',
+    emoji: '💕',
   },
   {
-    image: 'https://i.imgur.com/vA1tJiu.jpg',
-    message: "Beach walk at sunset 🌅",
-  },
-  {
-    image: 'https://i.imgur.com/ogMk3NN.jpg',
-    message: "Laughing like kids 😂",
+    caption: 'Moments yet to happen 💌',
+    emoji: '⏳',
   },
 ];
 
-const Memories = () => {
+const MemoryBoard = () => {
   return (
-    <section className="memories-section">
-      <h2 className="memories-heading">💞 Our Memories 💞</h2>
-      <div className="memory-grid">
-        {memories.map((mem, idx) => (
-          <div key={idx} className="memory-card">
-            <div className="card-inner">
-              <div className="card-front">
-                <img src={mem.image} alt="Memory" />
-              </div>
-              <div className="card-back">
-                <p>{mem.message}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className="memory-board">
+      {memories.map((memory, index) => (
+        <div key={index} className={`polaroid rotate-${index % 3}`}>
+          <div className="photo-area">{memory.emoji}</div>
+          <div className="caption">{memory.caption}</div>
+        </div>
+      ))}
+    </div>
   );
 };
 
-export default Memories;
+export default MemoryBoard;

@@ -1,0 +1,76 @@
+.notes-carousel {
+  padding: 2rem 1rem;
+  background: #fffafc;
+  text-align: center;
+  overflow: hidden;
+}
+
+.carousel-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Caveat', cursive;
+  color: #ff69b4;
+}
+
+.notes-wrapper {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  transition: all 0.3s ease-in-out;
+}
+
+.note-card {
+  flex: 0 0 auto;
+  background: #fff0f5;
+  border: 2px solid #ffc1e3;
+  padding: 1rem 0.8rem;
+  border-radius: 10px;
+  min-width: 180px;
+  max-width: 200px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.05rem;
+  color: #333;
+  position: relative;
+  scroll-snap-align: start;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease both;
+}
+
+.note-card .tape-top {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  font-size: 1.5rem;
+  background-color: #ffccdd;
+  border-radius: 4px;
+  padding: 0 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hide scrollbar for a cleaner look */
+.notes-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.notes-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

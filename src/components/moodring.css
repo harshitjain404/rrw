@@ -1,0 +1,75 @@
+.mood-ring-wrapper {
+  text-align: center;
+  margin: 4rem 0;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+.pillow {
+  background: radial-gradient(ellipse at center, #fce4ec, #f8bbd0);
+  width: 160px;
+  height: 100px;
+  border-radius: 80px / 50px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(255, 105, 180, 0.3);
+}
+
+.mood-ring-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: auto;
+  top: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  animation: glowPulse 3s infinite;
+  cursor: pointer;
+}
+
+.mood-ring-label {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-family: 'Comic Sans MS', cursive;
+  color: #fff;
+  animation: floatText 2s ease-in-out infinite;
+}
+
+.sparkle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translateX(-50%);
+  background: url('https://cdn.pixabay.com/photo/2014/04/02/10/56/star-304264_960_720.png') repeat;
+  background-size: contain;
+  opacity: 0.2;
+  animation: twinkle 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glowPulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+  50% { transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 255, 255, 0.8); }
+  100% { transform: scale(1); box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+}
+
+@keyframes floatText {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes twinkle {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

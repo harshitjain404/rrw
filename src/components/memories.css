@@ -1,65 +1,139 @@
-.memories-section {
-  background-color: #fff0f5;
-  padding: 3rem 1rem;
-  text-align: center;
-}
-
-.memories-heading {
-  font-family: 'Pacifico', cursive;
-  color: #ff69b4;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.memory-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
-}
-
-.memory-card {
-  width: 220px;
-  height: 280px;
-  perspective: 1000px;
-}
-
-.card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.memory-card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
-  backface-visibility: hidden;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.card-front img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-back {
-  background-color: #ffb6c1;
-  color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-  transform: rotateY(180deg);
+.memory-board {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.polaroid {
+  width: 150px;
+  background: white;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  font-family: 'Courier New', Courier, monospace;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.photo-area {
+  width: 100%;
+  height: 130px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.caption {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #444;
+}
+
+/* Random rotation classes */
+.rotate-0 {
+  transform: rotate(-5deg);
+}
+.rotate-1 {
+  transform: rotate(3deg);
+}
+.rotate-2 {
+  transform: rotate(-2deg);
+}
+
+.memory-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.polaroid {
+  width: 150px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* Fake "pin" */
+.polaroid::before {
+  content: '📌';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  z-index: 3;
+}
+
+/* Fake tape strips */
+.polaroid::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 15px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffd3e0,
+    #ffd3e0 5px,
+    #ff90b3 5px,
+    #ff90b3 10px
+  );
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+  opacity: 0.6;
+  z-index: 2;
+}
+
+/* Polaroid photo area */
+.photo-area {
+  width: 100%;
+  height: 130px;
+  background-color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  border-bottom: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Caption area */
+.caption {
+  padding: 0.5rem 0 0;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #444;
+}
+
+/* Fun random tilt classes */
+.rotate-0 {
+  transform: rotate(-5deg);
+}
+.rotate-1 {
+  transform: rotate(3deg);
+}
+.rotate-2 {
+  transform: rotate(-2deg);
 }

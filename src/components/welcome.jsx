@@ -1,19 +1,18 @@
-// src/components/Welcome.js
 import React from 'react';
 import './welcome.css';
 
-const Welcome = () => {
+function Welcome() {
   return (
-    <div className="welcome-section">
-      <div className="heart-bg">
-        <h1>💖 Happy Girlfriend’s Day 💖</h1>
-        <p>
-          To the most beautiful soul in my life —<br />
-          this little website is my way of saying how much I love you 💌
-        </p>
-      </div>
+    <div className="welcome-container">
+      <h1 className="welcome-heading">Hey Love ❤️</h1>
+      <p className="welcome-subtitle">
+        🌸 I made this little website just for you... <br />
+        🐻 To say thank you for being the sweetest part of my life <br />
+        ☕ Let’s make a thousand more memories together... <br />
+        💌 Scroll down for a few surprises 🎁
+      </p>
     </div>
   );
-};
+}
 
 export default Welcome;
